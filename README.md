@@ -2,7 +2,9 @@
 
 This is a simple blog application built with Django. Users can create, edit, delete posts, and add comments to posts.  
 
-> **Note:** This project was developed by Davut Ovezov, inspired by Oguzhan Mavi's Django Blog app.
+> **Note:** This project was developed by Davut, inspired by Oguzhan Mavi's Django Blog app.  
+> Source tutorial: [Oguzhan Mavi Django Blog Playlist](https://www.youtube.com/playlist?list=PLEUnqVOJ1y6PaHrlMJbHk7NHdixPSFjV4)
+
 
 ## Features
 
