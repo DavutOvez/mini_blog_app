@@ -21,3 +21,30 @@ def post_detail(request,id):
     else:
         comment_form = CommentForm()
     return render(request,'blog/post_detail.html',{'post':post,'comments':comments,'comment_form':comment_form})
+
+def post_new(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = PostForm()
+    return render(request,'blog/post_edit.html',{'form':form})
+
+def post_edit(request,id):
+    post = get_object_or_404(Post,id=id)
+    if request.method == 'POST':
+        form = PostForm(request.POST,instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('post_detail',id=post.id)
+    else:
+        form = PostForm(instance=post)
+    return render(request,'blog/post_edit.html',{'form':form})
+
+
+def post_delete(request,id):
+    post = get_object_or_404(Post,id=id)
+    post.delete()
+    return redirect('home')
